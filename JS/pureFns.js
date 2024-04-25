@@ -11,3 +11,5 @@ function double2(a) {
 
 console.log(double(5))
 console.log(double2(5))
+
+console.log('               hello                      '.trim())

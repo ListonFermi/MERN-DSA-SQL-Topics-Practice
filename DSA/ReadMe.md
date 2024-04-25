@@ -18,3 +18,16 @@
 
 15/120
 
+> ###### 25-04-2024, Thursday
+
+- Hashtable
+- What is hashing?
+- Hash function
+- Collision
+- Seperate chaining
+- open addressing
+- linear probing
+- quadratic probing
+- load factor
+
+24/120
