@@ -342,3 +342,68 @@ FROM
    mock_data
 WHERE
    car_vin LIKE '%234';
+
+---------------------------------------------- 26-04-2024, Friday----------------------------------------------------------------
+/*
+ 
+ From ChatGPT:
+ 
+ 1. Create a table named `student` with columns `student_id`, `name`, `age`, and `college_id`.
+ 2. Add a new column named `address` to the `student` table.
+ 3. Remove the `age` column from the `student` table.
+ 4. Rename the `name` column in the `student` table to `full_name`.
+ 5. Truncate the `student` table.
+ 6. Drop the `college` table from the database.
+ 7. Create a foreign key constraint on the `college_id` column in the `student` table referencing the `id` column of the `college` table.
+ 8. Add a unique constraint to the `college_id` column in the `student` table.
+ 9. Alter the data type of the `college_id` column in the `student` table to be a UUID.
+ 10. Rename the `student` table to `participants`.
+ 
+ */
+-- 1. Create a table named `student` with columns `student_id`, `name`, `age`, and `college_id`.
+CREATE TABLE student (
+   student_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+   name VARCHAR(50),
+   age INT CHECK(
+      age > 17
+      AND age < 30
+   ),
+   college_id UUID UNIQUE NOT NULL
+);
+
+-- 2. Add a new column named `address` to the `student` table.
+ALTER TABLE
+   student RENAME COLUMN age TO stu_age;
+
+-- 3. Remove the `age` column from the `student` table.
+ALTER TABLE
+   student DROP COLUMN stu_age;
+
+-- 4. Rename the `name` column in the `student` table to `full_name`.
+
+ALTER TABLE
+   student RENAME COLUMN name TO full_name;
+
+-- 5. Truncate the `student` table.
+
+TRUNCATE TABLE student;
+
+-- 6. Drop the `college` table from the database.
+
+DROP TABLE college;
+
+-- 7. Create a foreign key constraint on the `college_id` column in the `student` table referencing the `id` column of the `college` table.
+
+
+
+-- 8. Add a unique constraint to the `college_id` column in the `student` table.
+
+ ALTER TABLE student ADD CONSTRAINT uni_clg_id UNIQUE(college_id);
+
+-- 9. Alter the data type of the `college_id` column in the `student` table to be a UUID.
+
+
+
+-- 10. Rename the `student` table to `participants`.
+
+ALTER TABLE student RENAME TO participants;

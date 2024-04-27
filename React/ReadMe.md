@@ -22,3 +22,29 @@
 - life cycle methods vs useEffect
 
 15/54
+
+- What are error boundaries?
+- strict mode in react
+- pointer events
+- props
+- Hooks
+- state, setState
+- useState
+- useEffect
+- CSR vs SSR
+- React profiler
+- React fiber
+- diffing algorithm
+- shadow DOM
+- useReducer
+- useMemo vs React.memo
+- useCallback
+- React.lazy
+- code splitting
+- suspense
+- Redux
+- why do we need redux
+- passing value from child to parent
+- counter using useReducer
+
+38/54

@@ -40,6 +40,8 @@
 
 37/102
 
+> ###### 25-04-2024, Thursday
+
 What are the life cycle methods in class based components ?
 What is a cleanup function?
 Why we use a cleanup function?
@@ -57,3 +59,18 @@ What is prop drilling?
 - optional chaining
 
 40/102
+
+> ###### 26-04-2024, Friday
+
+- Global execution context
+- Event loop
+- Nullish operator
+- string method
+- array method
+- This keyword
+- Set(), Map()
+- promise methods 
+- undefined vs null
+- value of let and const in tdz
+
+50/102

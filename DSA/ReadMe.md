@@ -31,3 +31,11 @@
 - load factor
 
 24/120
+
+> ###### 26-04-2024, Friday
+
+- tree
+- Binary tree
+- Binary search tree
+
+27/120

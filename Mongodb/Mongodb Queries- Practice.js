@@ -59,6 +59,8 @@ db.people.aggregate([
   { $project: { name: true, age: true, _id: false } },
 ]);
 
+//---------------------------------------------- 26-04-2024, Friday-----------------------------------------------//
+
 /*
 
 From ChatGPT:
@@ -130,3 +132,68 @@ db.people.aggregate([
   { $sort: { age: 1 } },
   { $project: { name: true, age: true, _id: false } },
 ]);
+
+/*
+From ChatGPT
+
+Sure, let's delve into some more complex queries using MongoDB's aggregation framework:
+
+12. Retrieve the total count of documents in the collection.
+13. Calculate the average age of all documents.
+14. Group documents by `favoriteFruit` and calculate the count of documents for each fruit.
+15. Calculate the total number of documents for each `eyeColor`.
+16. Find the oldest person's age among all documents.
+17. Calculate the total count of documents for each combination of `favoriteFruit` and `gender`.
+18. Group documents by `eyeColor` and calculate the average age for each eye color.
+19. Find the most common `favoriteFruit` among all documents.
+20. Calculate the difference in registration time between the oldest and youngest registered individuals in the collection.
+
+These queries should cover various aggregation operators and provide insights into the data. Let me know if you need assistance with any specific query!
+
+*/
+
+// 12. Retrieve the total count of documents in the collection.
+
+db.people.countDocuments();
+
+// 13. Calculate the average age of all documents.
+
+db.people.aggregate({ $group: { _id: "", avg_age: { $avg: "$age" } } });
+
+// 14. Group documents by `favoriteFruit` and calculate the count of documents for each fruit.
+
+db.people.aggregate({ $group: { _id: "$favoriteFruit", count: { $sum: 1 } } });
+
+// 15. Calculate the total number of documents for each `eyeColor`.
+
+db.people.aggregate({ $group: { _id: "$eyeColor", count: { $sum: 1 } } });
+
+// 16. Find the oldest person's age among all documents.
+
+db.people.aggregate([{ $sort: { age: -1 } }, { $limit: 1 }]);
+db.people.aggregate({ $group: { _id: null, max: { $max: "$age" } } });
+
+// 17. Calculate the total count of documents for each combination of `favoriteFruit` and `gender`.
+
+db.people.aggregate({
+  $group: {
+    _id: { favFru: "$favoriteFruit", gen: "$gender" },
+    count: { $sum: 1 },
+  },
+});
+
+// 18. Group documents by `eyeColor` and calculate the average age for each eye color.
+
+db.people.aggregate({ $group: { _id: "$eyeColor", avgAge: { $avg: "$age" } } });
+
+// 19. Find the most common `favoriteFruit` among all documents.
+
+db.people.aggregate([
+  { $group: { _id: "$favoriteFruit", count: { $sum: 1 } } },
+  { $sort: { count: -1 } },
+  { $limit: 1 },
+]);
+
+// 20. Calculate the difference in registration time between the oldest and youngest registered individuals in the collection.
+
+
