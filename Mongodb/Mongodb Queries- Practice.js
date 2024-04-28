@@ -196,4 +196,25 @@ db.people.aggregate([
 
 // 20. Calculate the difference in registration time between the oldest and youngest registered individuals in the collection.
 
+//---------------------------------------------- 27-04-2024, Saturday-----------------------------------------------//
 
+/*Examples from docs
+
+// Capped Collection
+db.createCollection("test2", { capped: true, size: 100000 });
+
+//index
+db.test.createIndex({ name: 1 });
+
+//TTL index
+db.eventlog.createIndex(
+  { lastModifiedDate: 1 },
+  {
+    expireAfterSeconds: 3600,
+  }
+);
+
+db.monthlyBudget.find( { $expr: { $gt: [ $spent , $budget ] } } ) //comparing fields of same field
+
+
+*/

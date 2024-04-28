@@ -16,3 +16,13 @@
 
 4/77
 
+###### 26-04-2024, Friday
+
+###### 27-04-2024, Saturday
+
+- transcation
+- capped collection
+- single purpose aggregation
+- indexing
+- create index
+

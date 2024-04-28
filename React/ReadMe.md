@@ -4,7 +4,7 @@
 - How is JSX converted to js?
 - transpiler
 
-3/54
+3/51
 
 > ###### 25-04-2024, Thursday
 
@@ -21,7 +21,9 @@
 - class vs fn components
 - life cycle methods vs useEffect
 
-15/54
+15/51
+
+> ###### 26-04-2024, fri
 
 - What are error boundaries?
 - strict mode in react
@@ -47,4 +49,17 @@
 - passing value from child to parent
 - counter using useReducer
 
-38/54
+38/51
+
+> ###### 27-04-2024, Sat
+
+- What are controlled and uncontrolled components?
+- context api
+- useContext
+- limitation of redux
+- core concepts of redux
+- useSelector
+- useDispatch
+
+45/51
+

@@ -39,3 +39,19 @@
 - Binary search tree
 
 27/120
+
+> ###### 27-04-2024, Sat
+
+- root node
+- child node
+- siblings
+- Heap 
+- min heap
+- max heap
+- Trie
+- Adjacency list 
+
+> ###### 28-04-2024, Sun
+
+
+
